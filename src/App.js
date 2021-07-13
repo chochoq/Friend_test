@@ -11,7 +11,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       name: ["야옹이","뇽뇽"],
-      score:["100","80"]
+      score: ["100", "80"],
+      number: ["1", "2", "3"],
+      
     };
   }
 
@@ -19,8 +21,8 @@ class App extends React.Component {
     return (
       <div className="app">
         {/* <start></start> */}
-        <Score name={this.state.name} score={this.state.score}></Score>
-        {/* <quiz></quiz> */}
+        {/* <Score name={this.state.name} score={this.state.score}></Score> */}
+        <Quiz name={this.state.name} number={this.state.number}></Quiz>
       </div>
     )
   }

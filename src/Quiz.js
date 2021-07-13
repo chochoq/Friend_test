@@ -9,11 +9,11 @@ const Quiz = (props) => {
     return (
         <AppDiv>
             <Container>
-                <p>{number[0]}번문제</p>
+                <P>{number[0]}번문제</P>
                 <h2>{name[0]}은(는) n살이다</h2>
                 <img src="https://file.mk.co.kr/meet/neds/2021/04/image_readtop_2021_374021_16187973224615548.jpg" />
-                <p>O</p>
-                <p>X</p>
+                <YesButton>O</YesButton>
+                <NoButton>X</NoButton>
             </Container>
         </AppDiv>
     );
@@ -39,6 +39,29 @@ const Container = styled.div`
     text-align: center;
     display: flex;
     flex-direction: column;
+`
+
+const P = styled.p`
+    background-color: rgba(171, 20, 10, 0.3);
+    border-radius: 10px;
+    padding: 5px;
+    width: 10vw;
+    margin: 0px auto;
+`
+
+const YesButton = styled.button`
+    background-color: rgba(171, 106, 184, 0.411);
+    border-radius: 10px;
+    padding: 10px;
+    border: 0px solid rgba(171, 106, 184, 0.411);
+    margin: 5px;
+`
+const NoButton = styled.button`
+    background-color: rgba(50, 20, 184, 0.411);
+    border-radius: 10px;
+    padding: 10px;
+    border: 0px solid rgba(50, 20, 184, 0.411);
+    margin: 5px;
 `
 
 export default Quiz;
