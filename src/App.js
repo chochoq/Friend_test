@@ -22,8 +22,8 @@ class App extends React.Component {
     return (
       <AppDiv className="app">
         {/* <start></start> */}
-        {/* <Score name={this.state.name} score={this.state.score}></Score> */}
-        <Quiz name={this.state.name} number={this.state.number}></Quiz>
+        <Score name={this.state.name} score={this.state.score}></Score>
+        {/* <Quiz name={this.state.name} number={this.state.number}></Quiz> */}
       </AppDiv>
     )
   }

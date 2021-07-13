@@ -11,9 +11,11 @@ const Score = (props) => {
 
     return (
             <Container>
-                <h1><Span>{name[0]}</Span> 퀴즈에 대한 내 점수는?</h1>
-                <h1><Span>{score[0]}</Span> 점</h1>
+                <Text><span>{name[0]}</span> 퀴즈에 대한 내 점수는?</Text>
+            <ScoreDiv>
+                <span>{score[0]}</span> 점
                 <p>멘트 궈궈</p>
+            </ScoreDiv>
 
                 <ScoreButton>점수보기</ScoreButton>
                 <RankButton>랭킹보기</RankButton>
@@ -34,27 +36,53 @@ const Container = styled.div`
     text-align: center;
     display: flex;
     flex-direction: column;
-`
+`;
 
-const Span = styled.span`
-    background-color: rgba(171, 20, 10, 0.3);
-    border-radius: 10px;
-    padding: 5px;
-`
+const Text = styled.h1`
+    font-size: 1.5em;
+    margin:0px;
+    line-height: 1.4;
+
+    & span{
+        background-color: rgba(171, 20, 10, 0.2);
+        border-radius: 10px;
+        padding: 5px;
+    }
+`;
+
+const ScoreDiv = styled.div`
+    font-weight: 600;
+    font-size: 1.5em;
+    margin: 24px;
+
+    & span{
+            background-color: rgba(171, 20, 10, 0.2);
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+    & > p{
+        margin: 24px 0px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+`;
+
 
 const ScoreButton = styled.button`
     background-color: rgba(171, 106, 184, 0.411);
-    border-radius: 10px;
+    border-radius: 30px;
     padding: 10px;
-    border: 0px solid rgba(171, 106, 184, 0.411);
+    border: 1px solid rgba(171, 106, 184, 0.411);
     margin: 5px;
 `
 const RankButton = styled.button`
     background-color: rgba(50, 20, 184, 0.411);
-    border-radius: 10px;
+    border-radius: 30px;
     padding: 10px;
-    border: 0px solid rgba(50, 20, 184, 0.411);
+    border: 1px solid rgba(50, 20, 184, 0.411);
     margin: 5px;
+
 `
 
 
