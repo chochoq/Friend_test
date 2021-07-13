@@ -10,7 +10,6 @@ const Score = (props) => {
     console.log(score);
 
     return (
-        <AppDiv>
             <Container>
                 <h1><Span>{name[0]}</Span> 퀴즈에 대한 내 점수는?</h1>
                 <h1><Span>{score[0]}</Span> 점</h1>
@@ -18,20 +17,10 @@ const Score = (props) => {
 
                 <ScoreButton>점수보기</ScoreButton>
                 <RankButton>랭킹보기</RankButton>
-            </Container>
-        </AppDiv>
-        
+            </Container>        
     );
 };
 
-
-const AppDiv = styled.div`
-    width: 100vw;
-    min-height: 100vh;
-    background-color: rgba(171, 106, 184, 0.411);
-    padding: 32px;
-    box-sizing: border-box;
-`
 
 const Container = styled.div`
     max-width: 350px;

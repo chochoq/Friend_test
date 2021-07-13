@@ -7,25 +7,16 @@ const Quiz = (props) => {
     const number = props.number;
 
     return (
-        <AppDiv>
-            <Container>
-                <P>{number[0]}번문제</P>
-                <h2>{name[0]}은(는) n살이다</h2>
-                <img src="https://file.mk.co.kr/meet/neds/2021/04/image_readtop_2021_374021_16187973224615548.jpg" />
-                <YesButton>O</YesButton>
-                <NoButton>X</NoButton>
-            </Container>
-        </AppDiv>
+        <Container>
+            <P>{number[0]}번문제</P>
+            <h2>{name[0]}은(는) n살이다</h2>
+            <img src="https://file.mk.co.kr/meet/neds/2021/04/image_readtop_2021_374021_16187973224615548.jpg" />
+            <YesButton>O</YesButton>
+            <NoButton>X</NoButton>
+        </Container>
     );
 };
 
-const AppDiv = styled.div`
-    width: 100vw;
-    min-height: 100vh;
-    background-color: rgba(171, 106, 184, 0.411);
-    padding: 32px;
-    box-sizing: border-box;
-`
 
 const Container = styled.div`
     max-width: 350px;

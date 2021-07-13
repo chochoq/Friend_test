@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import styled from 'styled-components';
 
 import Score from './Score';
 import Quiz from './Quiz';
@@ -19,14 +20,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="app">
+      <AppDiv className="app">
         {/* <start></start> */}
         {/* <Score name={this.state.name} score={this.state.score}></Score> */}
         <Quiz name={this.state.name} number={this.state.number}></Quiz>
-      </div>
+      </AppDiv>
     )
   }
 }
 
+
+const AppDiv = styled.div`
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(171, 106, 184, 0.411);
+    padding: 32px;
+    box-sizing: border-box;
+`
 
 export default App;
