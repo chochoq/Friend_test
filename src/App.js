@@ -14,16 +14,17 @@ class App extends React.Component {
       name: ["야옹이","뇽뇽"],
       score: ["100", "80"],
       number: ["1", "2", "3"],
-      
+      page:"start",
     };
   }
 
   render() {
     return (
       <AppDiv className="app">
-        {/* <start></start> */}
-        <Score name={this.state.name} score={this.state.score}></Score>
-        {/* <Quiz name={this.state.name} number={this.state.number}></Quiz> */}
+        {this.state.page === "quiz" && (<Quiz name={this.state.name} score={this.state.score} />)}
+        {this.state.page === "start" && (<Start name={this.state.name}/>)}
+        {this.state.page === "score" && (<Score name={this.state.name} score={this.state.score}/>)}
+
       </AppDiv>
     )
   }
