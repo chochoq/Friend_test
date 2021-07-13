@@ -45,7 +45,7 @@ const Start = ({ name }) => {
                     }}>{name}</span> 에 대해 얼마나 알고있을까?
                 </h1>
                 
-                <input type="text" placeholder="이름"
+                <input type="text" placeholder="이름을 적어주세요"
                     style={{
                         padding: '10px',
                         margin: '24px 0px',
