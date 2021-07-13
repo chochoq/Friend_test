@@ -3,17 +3,40 @@ import styled from 'styled-components';
 
 const Quiz = (props) => {
 
-    const name = props.name;
-    const number = props.number;
+    const [num, setNum] = React.useState(0);
+
+    const list = props.list;
+    console.log(list[0].question);
+
+    const onNext = () => {
+        setNum(num + 1);
+    }
 
     return (
         <Container>
-            <p><span>{number[0]}번 문제</span></p>
-            <h2>{name[0]}은(는) n살이다</h2>
-            <img src="https://file.mk.co.kr/meet/neds/2021/04/image_readtop_2021_374021_16187973224615548.jpg" />
+            <p><span>{num + 1}번 문제</span></p>
 
-            <YesButton>O</YesButton>
-            <NoButton>X</NoButton>
+            {/* 질문자리 */}
+            {list.map((l, idx) => {
+                if (num === idx) {
+                    return (
+                        <h2 key={idx}>{l.question}</h2>
+                    )
+                }
+            })}
+            {/* 답변 */}
+            {list.map((l, idx) => {
+                if (idx === num) {
+                    return (
+                        <Item key={idx}>
+                            <img src="https://file.mk.co.kr/meet/neds/2021/04/image_readtop_2021_374021_16187973224615548.jpg" />
+                            
+                            <YesButton onClick={onNext}>O</YesButton>
+                            <NoButton onClick={onNext}>X</NoButton>
+                        </Item>
+                    );
+                }
+            })}
         </Container>
     );
 };
@@ -40,6 +63,21 @@ const Container = styled.div`
         margin: 0px auto;
     }
 `
+const Item = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    & img {
+        max-width: 50%;
+    } 
+`;
 
 
 const YesButton = styled.button`
@@ -48,6 +86,7 @@ const YesButton = styled.button`
     padding: 10px;
     border: 0px solid rgba(171, 106, 184, 0.411);
     margin: 5px;
+    width: 50vw;
 `
 const NoButton = styled.button`
     background-color: rgba(50, 20, 184, 0.411);
@@ -55,6 +94,7 @@ const NoButton = styled.button`
     padding: 10px;
     border: 0px solid rgba(50, 20, 184, 0.411);
     margin: 5px;
+    width: 50vw;
 `
 
 export default Quiz;

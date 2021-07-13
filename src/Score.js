@@ -3,18 +3,15 @@ import styled from 'styled-components';
 
 const Score = (props) => {
 
+    const scoreMsg = props.scoreMsg;
     const name = props.name;
-    const score = props.score;
-
-    console.log(name);
-    console.log(score);
 
     return (
             <Container>
-                <Text><span>{name[0]}</span> 퀴즈에 대한 내 점수는?</Text>
+                <Text><span>{name}</span> 퀴즈에 대한 내 점수는?</Text>
             <ScoreDiv>
-                <span>{score[0]}</span> 점
-                <p>멘트 궈궈</p>
+                <span>100</span> 점
+                <p>{scoreMsg}</p>
             </ScoreDiv>
 
                 <ScoreButton>점수보기</ScoreButton>
