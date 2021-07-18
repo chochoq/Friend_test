@@ -13,7 +13,7 @@ const Quiz = (props) => {
     }
 
     return (
-        <Container>
+        <div>
             <p><span>{num + 1}번 문제</span></p>
 
             {/* 질문자리 */}
@@ -28,22 +28,22 @@ const Quiz = (props) => {
             {list.map((l, idx) => {
                 if (idx === num) {
                     return (
-                        <Item key={idx}>
-                            <img src="https://file.mk.co.kr/meet/neds/2021/04/image_readtop_2021_374021_16187973224615548.jpg" />
+                        <div key={idx}>
+                            <Img src="https://file.mk.co.kr/meet/neds/2021/04/image_readtop_2021_374021_16187973224615548.jpg" />
                             
                             <YesButton onClick={onNext}>O</YesButton>
                             <NoButton onClick={onNext}>X</NoButton>
-                        </Item>
+                        </div>
                     );
                 }
             })}
-        </Container>
+        </div>
     );
 };
 
 
 const Container = styled.div`
-    max-width: 350px;
+    max-width: 90%;
     min-height: 80vh;
     background-color: #fff;
     padding: 16px;
@@ -63,21 +63,13 @@ const Container = styled.div`
         margin: 0px auto;
     }
 `
-const Item = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
 
-    & img {
-        max-width: 50%;
-    } 
-`;
+const Img = styled.img`
+    max-width: max-content;
+    min-height: 50vh;
+    width : 70vw;
+    
+`
 
 
 const YesButton = styled.button`

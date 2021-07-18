@@ -7,7 +7,7 @@ const Score = (props) => {
     const name = props.name;
 
     return (
-            <Container>
+            <div>
                 <Text><span>{name}</span> 퀴즈에 대한 내 점수는?</Text>
             <ScoreDiv>
                 <span>100</span> 점
@@ -16,7 +16,7 @@ const Score = (props) => {
 
                 <ScoreButton>점수보기</ScoreButton>
                 <RankButton>랭킹보기</RankButton>
-            </Container>        
+            </div>        
     );
 };
 

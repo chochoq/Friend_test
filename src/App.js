@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import Score from './Score';
 import Quiz from './Quiz';
 import Start from './Start';
+import Rank from './Rank';
+import Comment from './Comment';
 
 
 class App extends React.Component {
@@ -15,7 +17,7 @@ class App extends React.Component {
       score: ["100", "80"],
       scoreMsg:"주노 좋아하는구나!? 나도 조아해",
       number: ["1", "2", "3"],
-      page: "quiz",
+      page: "score",
       list: [
         { question: "주노는 잊누너", answer: "O" },
         { question: "주노는 개그맨", answer: "X" },
@@ -29,10 +31,13 @@ class App extends React.Component {
   render() {
     return (
       <AppDiv className="app">
-        {this.state.page === "quiz" && (<Quiz list={this.state.list} />)}
-        {this.state.page === "start" && (<Start name={this.state.name}/>)}
-        {this.state.page === "score" && (<Score scoreMsg={this.state.scoreMsg} name={this.state.name}/>)}
-
+        <Container>
+          {this.state.page === "quiz" && (<Quiz list={this.state.list} />)}
+          {this.state.page === "start" && (<Start name={this.state.name}/>)}
+          {this.state.page === "score" && (<Score scoreMsg={this.state.scoreMsg} name={this.state.name}/>)}
+          <Rank></Rank>
+          <Comment></Comment>
+        </Container>
       </AppDiv>
     )
   }
@@ -46,5 +51,19 @@ const AppDiv = styled.div`
     padding: 32px;
     box-sizing: border-box;
 `
+
+const Container = styled.div`
+    max-width: 350px;
+    min-height: 80vh;
+    background-color: #fff;
+    padding: 16px;
+    margin: 20px auto;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+`;
 
 export default App;
