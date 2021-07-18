@@ -8,6 +8,9 @@ import Start from './Start';
 import Rank from './Rank';
 import Comment from './Comment';
 
+import { Route } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -15,9 +18,9 @@ class App extends React.Component {
     this.state = {
       name: ["잊누너","뇽뇽"],
       score: ["100", "80"],
-      scoreMsg:"주노 좋아하는구나!? 나도 조아해",
+      comment:"주노 좋아하는구나!? 나도 조아해",
       number: ["1", "2", "3"],
-      page: "score",
+      // page: "start",
       list: [
         { question: "주노는 잊누너", answer: "O" },
         { question: "주노는 개그맨", answer: "X" },
@@ -32,11 +35,11 @@ class App extends React.Component {
     return (
       <AppDiv className="app">
         <Container>
-          {this.state.page === "quiz" && (<Quiz list={this.state.list} />)}
-          {this.state.page === "start" && (<Start name={this.state.name}/>)}
-          {this.state.page === "score" && (<Score scoreMsg={this.state.scoreMsg} name={this.state.name}/>)}
-          <Rank></Rank>
-          <Comment></Comment>
+          <Route exact path='/' render={(props)=><Start name={this.state.name}/>}/>
+          <Route path='/quiz' render={(props)=><Quiz list={this.state.list} />}/>
+          <Route path='/score' render={(props) => <Score comment={this.state.comment} name={this.state.name} />} />
+          <Route path='/rank' render={(props)=><Rank name={this.state.name} comment={this.state.comment}/> } />
+          <Route path='/comment' render={(props)=><Comment name={this.state.name}/>}/>
         </Container>
       </AppDiv>
     )
@@ -66,4 +69,4 @@ const Container = styled.div`
     flex-direction: column;
 `;
 
-export default App;
+export default withRouter(App);

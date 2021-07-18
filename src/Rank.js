@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const Rank = (props) => {
 
+    
     return (
         <div>
             <h3>n명의 사람들 중 당신의 점수는?</h3>
@@ -28,7 +29,7 @@ const Text = styled.div`
     position: absolute;
     left: 20%;
 `
-
+// 플로팅버튼
 const Button = styled.button`
     background-color: rgba(171, 106, 184, 0.411);
     border-radius: 10px;
@@ -36,6 +37,10 @@ const Button = styled.button`
     border: 0px solid rgba(171, 106, 184, 0.411);
     margin: 5px;
     width: 50vw;
+
+    right: 23%; 
+    bottom: 100px; 
+    position: fixed;
 `
 
 export default Rank;
