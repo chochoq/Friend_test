@@ -67,7 +67,8 @@ const Container = styled.div`
 const Img = styled.img`
     max-width: max-content;
     min-height: 50vh;
-    width : 70vw;
+    width: 90%;
+    margin: 16px
     
 `
 
