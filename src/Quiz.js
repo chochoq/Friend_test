@@ -1,12 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { addAnswer } from './redux/modules/quiz';
 
 const Quiz = (props) => {
 
+    console.log(props);
+
     const [num, setNum] = React.useState(0);
+    const quiz = useSelector((state) => state.quiz.quiz);
 
     const list = props.list;
-    console.log(list[0].question);
+
 
     const onNext = () => {
         setNum(num + 1);
@@ -17,7 +22,7 @@ const Quiz = (props) => {
             <p><span>{num + 1}번 문제</span></p>
 
             {/* 질문자리 */}
-            {list.map((l, idx) => {
+            {quiz.map((l, idx) => {
                 if (num === idx) {
                     return (
                         <h2 key={idx}>{l.question}</h2>
@@ -25,7 +30,7 @@ const Quiz = (props) => {
                 }
             })}
             {/* 답변 */}
-            {list.map((l, idx) => {
+            {quiz.map((l, idx) => {
                 if (idx === num) {
                     return (
                         <div key={idx}>

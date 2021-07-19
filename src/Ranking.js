@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Rank = (props) => {
+const Ranking = (props) => {
 
-    
     return (
         <div>
-            <h3>n명의 사람들 중 당신의 점수는?</h3>
+            <TopBar>n명의 사람들 중 당신의 점수는?</TopBar>
             <hr></hr>
             <Box>
                 <Text>
@@ -19,6 +18,10 @@ const Rank = (props) => {
     );
 
 }
+
+const TopBar = styled.h3`
+    position: fixed;
+`
 
 const Box = styled.div`
     border: 1px solid #bcbcbc;
@@ -43,5 +46,5 @@ const Button = styled.button`
     position: fixed;
 `
 
-export default Rank;
+export default Ranking;
 

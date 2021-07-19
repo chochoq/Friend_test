@@ -5,29 +5,29 @@ import styled from 'styled-components';
 import Score from './Score';
 import Quiz from './Quiz';
 import Start from './Start';
-import Rank from './Rank';
-import Comment from './Comment';
+import Rank from './Ranking';
+import Message from './Message';
 import NotFound from './NotFound';
 
 import { Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
+import { connect } from 'react-redux';
+import { addUserName, addUserMessage,addRank,getRank } from './redux/modules/rank';
+import { getQuiz, addAnswer,resetAnswer } from './redux/modules/quiz';
+
+const mapStateToProps = (state) => ({
+  ...state,
+});
+const mapDispatchToProps = (dispatch) => ({
+  load: () => { },
+});
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ["잊누너"],
-      score: ["100", "80"],
-      comment:"주노 좋아하는구나!? 나도 조아해",
-      number: ["1", "2", "3"],
-      // page: "start",
-      list: [
-        { question: "주노는 잊누너", answer: "O" },
-        { question: "주노는 개그맨", answer: "X" },
-        { question: "주노는 잘생김", answer: "O" },
-        { question: "주노는 뾰로롱", answer: "X" },
-        { question: "주노는 쪼아쪼아", answer: "O" },
-      ]
+      
     };
   }
 
@@ -36,12 +36,12 @@ class App extends React.Component {
       <AppDiv className="app">
         <Container>
           <Switch>
-            <Route exact path='/' render={(props)=><Start name={this.state.name}/>}/>
-            <Route path='/quiz' render={(props)=><Quiz list={this.state.list} />}/>
-            <Route path='/score' render={(props) => <Score comment={this.state.comment} name={this.state.name} />} />
-            <Route path='/rank' render={(props)=><Rank name={this.state.name} comment={this.state.comment}/> } />
-            <Route path='/comment' render={(props) => <Comment name={this.state.name} />} />
-            <Route render={() =><NotFound/>} />
+            <Route exact path="/" component={ Start }/>
+            <Route path='/quiz' component={Quiz } />
+            <Route path='/score' component={ Score}  />
+            <Route path='/rank' component={Rank }/>
+            <Route path='/message' component={ Message } />
+            <Route component={ <NotFound/>} />
           </Switch>
         </Container>
       </AppDiv>
@@ -72,4 +72,4 @@ const Container = styled.div`
     flex-direction: column;
 `;
 
-export default withRouter(App);
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter(App));

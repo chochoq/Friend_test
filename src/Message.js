@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Comment = (props) => {
+const Message = (props) => {
 
     console.log(props.name);
     return (
@@ -42,4 +42,4 @@ const Comment = (props) => {
     )
 }
 
-export default Comment;
+export default Message;
