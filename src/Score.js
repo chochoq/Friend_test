@@ -1,22 +1,48 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Score = (props) => {
+import { useSelector, useDispatch } from 'react-redux';
+import { addRank } from './redux/modules/rank';
 
-    const scoreMsg = props.scoreMsg;
-    const name = props.name;
+const Score = (props) => {
+    const name = useSelector((state) => state.quiz.name);
+    const score_texts = useSelector((state) => state.quiz.score_texts);
+    const answers = useSelector((state) => state.quiz.answers);
+
+    // 답변에서 true인 answer만 걸러내기
+    let correct = answers.filter((answer) => {
+        return answer;
+    });
+
+    // 점수계산
+    let score = (correct.length / answers.length) * 100;
+
+    // 점수별로 텍스트 띄우기
+    let score_text = "";
+
+    // object.keys는 딕셔너리의 키값을 배열로 만들어준다
+    Object.keys(score_texts).map((s, idx) => {
+        if (idx === 0) {
+            score_text = score_texts[s];
+        }
+        // 실제점수와 기준점수(키로넣은 정수)를 비교해서 텍스트로 넣음
+        score_text = parseInt(s) <= score ? score_texts[s] : score_text;
+    });
+
 
     return (
-            <div>
+            <Container>
                 <Text><span>{name}</span> 퀴즈에 대한 내 점수는?</Text>
             <ScoreDiv>
-                <span>100</span> 점
-                <p>{scoreMsg}</p>
+                <span>{score}</span> 점
+                <p>{score_text}</p>
             </ScoreDiv>
 
-                <ScoreButton>점수보기</ScoreButton>
-                <RankButton>랭킹보기</RankButton>
-            </div>        
+
+            <RankButton onClick={() => {
+                props.history.push('/message');       
+            }}outlined>{name}에게 한마디</RankButton>
+            </Container>        
     );
 };
 
@@ -27,9 +53,7 @@ const Container = styled.div`
     background-color: #fff;
     padding: 16px;
     margin: 20px auto;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    
+
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -43,7 +67,7 @@ const Text = styled.h1`
     & span{
         background-color: rgba(171, 20, 10, 0.2);
         border-radius: 10px;
-        padding: 5px;
+        padding: 5px 10px;
     }
 `;
 
@@ -59,25 +83,18 @@ const ScoreDiv = styled.div`
         }
 
     & > p{
-        margin: 24px 0px;
+        margin: 50px 0px;
         font-size: 16px;
         font-weight: 400;
     }
 `;
 
 
-const ScoreButton = styled.button`
-    background-color: rgba(171, 106, 184, 0.411);
+const RankButton = styled.button`
+    background-color: ${(props) => (props.outlined ? "#ffffff" : "#dadafc")};
     border-radius: 30px;
     padding: 10px;
     border: 1px solid rgba(171, 106, 184, 0.411);
-    margin: 5px;
-`
-const RankButton = styled.button`
-    background-color: rgba(50, 20, 184, 0.411);
-    border-radius: 30px;
-    padding: 10px;
-    border: 1px solid rgba(50, 20, 184, 0.411);
     margin: 5px;
 
 `

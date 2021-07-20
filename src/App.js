@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Score from './Score';
 import Quiz from './Quiz';
 import Start from './Start';
-import Rank from './Ranking';
+import Ranking from './Ranking';
 import Message from './Message';
 import NotFound from './NotFound';
 
@@ -39,7 +39,7 @@ class App extends React.Component {
             <Route exact path="/" component={ Start }/>
             <Route path='/quiz' component={Quiz } />
             <Route path='/score' component={ Score}  />
-            <Route path='/rank' component={Rank }/>
+            <Route path='/ranking' component={Ranking }/>
             <Route path='/message' component={ Message } />
             <Route component={ <NotFound/>} />
           </Switch>

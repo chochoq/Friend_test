@@ -9,7 +9,7 @@ const initialState = {
     user_name: '',
     user_message: '',
     user_score: '',
-    score_text: {
+    score_texts: {
         60: "주노 좋아하는구나!? 나도 조아해",
         80: "80점!! 핫티구낫!!",
         100: "찐러버 주노집으로 가자"
@@ -39,14 +39,14 @@ export default function reducer(state = initialState, action = {}) {
         case 'rank/ADD_USER_NAME': {
             return { ...state, user_name: action.user_name };
         }
-        case 'rank/ADD_USER_message': {
+        case 'rank/ADD_USER_MESSAGE': {
             return { ...state, user_message: action.user_message };
         }
         case 'rank/ADD_RANK': {
-            return { ...state, rank: [...state.rank, action.rank_info] };
+            return { ...state, ranking: [...state.ranking, action.rank_info] };
         }
         case 'rank/GET_RANK': {
-            return { ...state, rank: action.rank_list };
+            return { ...state, ranking: action.rank_list };
         }
         
         default:

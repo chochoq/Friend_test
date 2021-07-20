@@ -43,6 +43,7 @@ const Start = ( props ) => {
                     border: '#dadafc'
                 }}
                 onClick={() => {
+                    // 이름저장
                     dispatch(addUserName(input_text.current.value));
                     props.history.push('/quiz');
                 }}

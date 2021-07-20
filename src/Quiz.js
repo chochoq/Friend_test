@@ -1,20 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
+
+import Score from './Score';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { addAnswer } from './redux/modules/quiz';
 
 const Quiz = (props) => {
-
-    console.log(props);
-
-    const [num, setNum] = React.useState(0);
+    const dispatch = useDispatch();
+    const answer = useSelector((state) => state.quiz.answers);
     const quiz = useSelector((state) => state.quiz.quiz);
+    console.log(quiz);
+    console.log(answer);
 
-    const list = props.list;
 
+    const num = answer.length;
 
-    const onNext = () => {
-        setNum(num + 1);
+    const onButtonClick = (direction) => {
+        let _answer = direction==="left"?'O':'X';
+
+        if (_answer === quiz[num].answer) {
+            // 정답
+            dispatch(addAnswer(true));
+        } else {
+            dispatch(addAnswer(false));
+        }
+    }
+
+    if (num > quiz.length - 1) {
+        return <Score {...props}/>;
     }
 
     return (
@@ -36,8 +50,8 @@ const Quiz = (props) => {
                         <div key={idx}>
                             <Img src="https://file.mk.co.kr/meet/neds/2021/04/image_readtop_2021_374021_16187973224615548.jpg" />
                             
-                            <YesButton onClick={onNext}>O</YesButton>
-                            <NoButton onClick={onNext}>X</NoButton>
+                            <YesButton onClick={onButtonClick}>O</YesButton>
+                            <NoButton onClick={onButtonClick}>X</NoButton>
                         </div>
                     );
                 }
