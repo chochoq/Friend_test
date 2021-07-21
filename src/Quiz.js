@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Score from './Score';
+import Progress from './Progress';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { addAnswer } from './redux/modules/quiz';
@@ -33,6 +34,7 @@ const Quiz = (props) => {
 
     return (
         <div>
+            <Progress/>
             <p><span>{num + 1}번 문제</span></p>
 
             {/* 질문자리 */}

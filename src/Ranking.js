@@ -2,11 +2,27 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { resetAnswer } from './redux/modules/quiz';
-import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from 'react-dom';
+
 
 const Ranking = (props) => {
     const dispatch = useDispatch();
     const _ranking = useSelector((state) => state.rank.ranking);
+
+    
+    React.useEffect(() => {
+        if (!user_rank.current) {
+            return;
+        }
+        window.scrollTo({
+            top: user_rank.current.offsetTop,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, []);
+
+    // 스크롤 이동할 div의 ref를 잡아줄거예요!
+    const user_rank = React.useRef(null);
+
 
     // 높은 수가 위로오게 sort정렬
     const ranking = _ranking.sort((a, b) => {
@@ -17,22 +33,34 @@ const Ranking = (props) => {
         <div>
             <TopBar>
                 <p>
-                    <span>{ranking.length}</span>명의 사람들 중 당신의 점수는?
+                    <span>{ranking.length}명의</span> 사람들 중 당신의 점수는?
                 </p>
             </TopBar>
 
             <BoxWrap>
                 {ranking.map((r, idx) => {
+                    if (r.current) {
                         return (
-                        <BoxItem key={idx} highlight={r.current ? true:false}>
+                            <BoxItem key={idx} highlight={true} ref={user_rank}>
+                                <RankNum>
+                                        <h1>{idx + 1} 등</h1>
+                                    </RankNum>
+                                    <RankUser>
+                                        <b>{r.name}</b> <p>{r.message}</p>
+                                    </RankUser>
+                            </BoxItem>
+                        )
+                    }
+                    return (
+                        <BoxItem key={idx}>
                             <RankNum>
-                                    <h1>{ idx+1 } 등</h1>
-                                </RankNum>
-                                <RankUser>
-                                    <p>{r.name}</p> <p>{r.message}</p>
-                                </RankUser>
+                                <h1>{idx + 1} 등</h1>
+                            </RankNum>
+                            <RankUser>
+                                <b>{r.name}</b> <p>{r.message}</p>
+                            </RankUser>
                         </BoxItem>
-                    )
+                    );
                 })}
 
                 

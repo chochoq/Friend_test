@@ -15,7 +15,18 @@ const initialState = {
         100: "찐러버 주노집으로 가자"
     },
     ranking: [
-        { score: 40, name: 'noname', message: '조아해..조아한다' }
+        { score: 60, name: 'noname', message: '조아해..조아한다' },
+        { score: 70, name: '이름', message: '데에..조아한다' },
+        { score: 70, name: '이름', message: '데에..조아한다' },
+        { score: 70, name: '이름', message: '데에..조아한다' },
+        { score: 70, name: '이름', message: '데에..조아한다' },
+        { score: 70, name: '이름', message: '데에..조아한다' },
+        { score: 70, name: '이름', message: '데에..조아한다' },
+        { score: 70, name: '이름', message: '데에..조아한다' },
+        { score: 70, name: '이름', message: '데에..조아한다' },
+        { score: 70, name: '이름', message: '데에..조아한다' },
+        { score: 70, name: '이름', message: '데에..조아한다' },
+        { score: 70, name: '이름', message: '데에..조아한다' },
     ],
 };
 

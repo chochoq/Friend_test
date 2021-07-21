@@ -14,7 +14,9 @@ import { withRouter } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import { addUserName, addUserMessage,addRank,getRank } from './redux/modules/rank';
-import { getQuiz, addAnswer,resetAnswer } from './redux/modules/quiz';
+import { getQuiz, addAnswer, resetAnswer } from './redux/modules/quiz';
+
+// import { firestore } from "./firebase";
 
 const mapStateToProps = (state) => ({
   ...state,
@@ -41,7 +43,7 @@ class App extends React.Component {
             <Route path='/score' component={ Score}  />
             <Route path='/ranking' component={Ranking }/>
             <Route path='/message' component={ Message } />
-            <Route component={ <NotFound/>} />
+            <Route component={ NotFound} />
           </Switch>
         </Container>
       </AppDiv>

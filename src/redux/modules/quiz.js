@@ -7,7 +7,7 @@ const RESET_ANSWER = "quiz/RESET_ANSWER";
 
 const initialState = {
     name: ["잊누너"],
-    score: ["100", "80"],
+    score: ["100", "80","60"],
     score_texts: {
         60: "주노 좋아하는구나!? 나도 조아해",
         80: "80점!! 핫티구낫!!",
@@ -19,8 +19,10 @@ const initialState = {
         { question: "주노는 잊누너", answer: "O" },
         { question: "주노는 개그맨", answer: "X" },
         { question: "주노는 잘생김", answer: "O" },
-        { question: "주노는 뾰로롱", answer: "X" },
-        { question: "주노는 쪼아쪼아", answer: "O" }
+        { question: "주노는 고양이를 키운다", answer: "O" },
+        { question: "주노는 술을 잘마신", answer: "X" },
+        { question: "주노는 귀여워", answer: "O" },
+
     ],
 };
 
