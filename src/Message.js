@@ -7,7 +7,7 @@ const Message = (props) => {
     const dispatch = useDispatch();
     const name = useSelector((state) => state.quiz.name);
     const answers = useSelector((state) => state.quiz.answers);
-    const user_name = useSelector((state) => state.quiz.user_name);
+    const user_name = useSelector((state) => state.rank.user_name);
 
     const input_text = React.useRef(null);
 

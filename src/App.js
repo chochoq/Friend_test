@@ -11,12 +11,11 @@ import NotFound from './NotFound';
 
 import { Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-
+// 리덕스 스토어 연결
 import { connect } from 'react-redux';
-import { addUserName, addUserMessage,addRank,getRank } from './redux/modules/rank';
-import { getQuiz, addAnswer, resetAnswer } from './redux/modules/quiz';
 
 // import { firestore } from "./firebase";
+
 
 const mapStateToProps = (state) => ({
   ...state,
@@ -28,8 +27,8 @@ const mapDispatchToProps = (dispatch) => ({
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      
+
+    this.state = {  
     };
   }
 
