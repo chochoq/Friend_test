@@ -11,22 +11,37 @@ const Quiz = (props) => {
     const dispatch = useDispatch();
     const answer = useSelector((state) => state.quiz.answers);
     const quiz = useSelector((state) => state.quiz.quiz);
-    console.log(quiz);
-    console.log(answer);
-
 
     const num = answer.length;
 
-    const onButtonClick = (direction) => {
-        let _answer = direction==="left"?'O':'X';
-
-        if (_answer === quiz[num].answer) {
-            // 정답
-            dispatch(addAnswer(true));
-        } else {
-            dispatch(addAnswer(false));
-        }
+    const onClick_O = () => {
+        {quiz.map((l,idx)=>{
+            if (num === idx) {
+                if (l.answer === text_O.current.innerHTML) {
+                    dispatch(addAnswer(true));
+                } else {
+                    dispatch(addAnswer(false));
+                }
+            }
+        })}
     }
+    
+    const onClick_X = () =>{
+        {quiz.map((l, idx) => {
+        if (num === idx) {
+            if (l.answer === text_X.current.innerHTML) {
+            dispatch(addAnswer(true))
+            } else {
+            dispatch(addAnswer(false))
+            }
+        }
+        })}
+  }
+
+
+    const text_O = React.useRef();
+    const text_X = React.useRef();
+
 
     if (num > quiz.length - 1) {
         return <Score {...props}/>;
@@ -52,8 +67,9 @@ const Quiz = (props) => {
                         <div key={idx}>
                             <Img src="https://file.mk.co.kr/meet/neds/2021/04/image_readtop_2021_374021_16187973224615548.jpg" />
                             
-                            <YesButton onClick={onButtonClick}>O</YesButton>
-                            <NoButton onClick={onButtonClick}>X</NoButton>
+                                <YesButton ref={text_O} onClick={onClick_O} >O</YesButton>
+                                <NoButton ref={text_X} onClick={onClick_X}>X</NoButton>
+
                         </div>
                     );
                 }

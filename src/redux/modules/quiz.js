@@ -17,10 +17,14 @@ const initialState = {
     answers: [],
     quiz: [
         { question: "주노는 잊누너", answer: "O" },
-        { question: "주노는 개그맨", answer: "X" },
+        { question: "주노는 개그맨", answer: "O" },
         { question: "주노는 잘생김", answer: "O" },
         { question: "주노는 고양이를 키운다", answer: "O" },
-        { question: "주노는 술을 잘마신", answer: "X" },
+        { question: "주노는 술을 잘마신", answer: "O" },
+        { question: "주노는 귀여워", answer: "O" },
+        { question: "주노는 귀여워", answer: "O" },
+        { question: "주노는 귀여워", answer: "O" },
+        { question: "주노는 귀여워", answer: "O" },
         { question: "주노는 귀여워", answer: "O" },
 
     ],
