@@ -1,4 +1,8 @@
 // rank.js
+import { firestore } from '../../firebase';
+
+const rank_db = firestore.collection("rank");
+
 // 유저이름 바꾸기, 메세지바꾸기, 랭킹정보 추가, 랭킹정보 가져오기
 const ADD_USER_NAME = 'rank/ADD_USER_NAME';
 const ADD_USER_MESSAGE = 'rank/ADD_USER_MESSAGE';
@@ -42,6 +46,18 @@ export const addRank = (rank_info) => {
 };
 export const getRank = (rank_list) => {
     return { type: GET_RANK, rank_list };
+};
+
+export const getRankFB = () => {
+    return function (dispatch) {
+        rank_db.get().then((docs) => {
+            let rank_data = [];
+
+            docs.forEach((doc) => {
+                console.log(doc.data());
+            })
+        })
+    }
 };
 
 // reducer

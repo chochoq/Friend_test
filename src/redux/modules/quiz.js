@@ -1,4 +1,5 @@
 // quiz.js
+// import { firestore } from '../../firebase';
 
 // 퀴즈리스트가져오기, 답추가, 응답초기화
 const GET_QUIZ = "quiz/GET_QUIZ";
