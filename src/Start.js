@@ -3,6 +3,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUserName } from "./redux/modules/rank";
 
+
 const Start = ( props ) => {
     const dispatch = useDispatch();
     const name = useSelector((state) => state.quiz.name);

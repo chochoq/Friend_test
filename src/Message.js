@@ -63,7 +63,7 @@ const Message = (props) => {
                     borderRadius: '30px',
                     border: '#dadafc'
                 }}>
-                {props.name}에게 한마디하고 랭킹보러 갑시다</button>
+                {name}에게 한마디하고 랭킹보러 갑시다</button>
         </div>
     )
 }

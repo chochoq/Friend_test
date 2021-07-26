@@ -2,17 +2,25 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { resetAnswer } from './redux/modules/quiz';
+import { getRankFB } from './redux/modules/rank';
+import Spinner from './Spinner';
 
 
 const Ranking = (props) => {
     const dispatch = useDispatch();
     const _ranking = useSelector((state) => state.rank.ranking);
-
+    const is_loaded = useSelector((state) => state.rank.is_loaded);
     
+    // 스크롤 이동할 div의 ref를 잡아줌
+    const user_rank = React.useRef(null);
+
     React.useEffect(() => {
+        dispatch(getRankFB());
+
         if (!user_rank.current) {
             return;
         }
+        
         window.scrollTo({
             top: user_rank.current.offsetTop,
             left: 0,
@@ -20,14 +28,14 @@ const Ranking = (props) => {
         });
     }, []);
 
-    // 스크롤 이동할 div의 ref를 잡아줄거예요!
-    const user_rank = React.useRef(null);
-
-
     // 높은 수가 위로오게 sort정렬
     const ranking = _ranking.sort((a, b) => {
         return b.score - a.score;
     });
+
+    if (!is_loaded) {
+        return (<Spinner />);
+    }
 
     return (
         <div>

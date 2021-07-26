@@ -49,31 +49,33 @@ const Quiz = (props) => {
 
     return (
         <div>
-            <Progress/>
-            <p><span>{num + 1}번 문제</span></p>
+            <Progress />
+            <div>
+                <p><span>{num + 1}번 문제</span></p>
 
-            {/* 질문자리 */}
-            {quiz.map((l, idx) => {
-                if (num === idx) {
-                    return (
-                        <h2 key={idx}>{l.question}</h2>
-                    )
-                }
-            })}
-            {/* 답변 */}
-            {quiz.map((l, idx) => {
-                if (idx === num) {
-                    return (
-                        <div key={idx}>
-                            <Img src="https://file.mk.co.kr/meet/neds/2021/04/image_readtop_2021_374021_16187973224615548.jpg" />
-                            
-                                <YesButton ref={text_O} onClick={onClick_O} >O</YesButton>
-                                <NoButton ref={text_X} onClick={onClick_X}>X</NoButton>
+                {/* 질문자리 */}
+                {quiz.map((l, idx) => {
+                    if (num === idx) {
+                        return (
+                            <h2 key={idx}>{l.question}</h2>
+                        )
+                    }
+                })}
+                {/* 답변 */}
+                {quiz.map((l, idx) => {
+                    if (idx === num) {
+                        return (
+                            <div key={idx}>
+                                <Img src="https://file.mk.co.kr/meet/neds/2021/04/image_readtop_2021_374021_16187973224615548.jpg" />
+                                
+                                    <YesButton ref={text_O} onClick={onClick_O} >O</YesButton>
+                                    <NoButton ref={text_X} onClick={onClick_X}>X</NoButton>
 
-                        </div>
-                    );
-                }
-            })}
+                            </div>
+                        );
+                    }
+                })}
+            </div>
         </div>
     );
 };
@@ -116,7 +118,7 @@ const YesButton = styled.button`
     padding: 10px;
     border: 0px solid rgba(171, 106, 184, 0.411);
     margin: 5px;
-    width: 50vw;
+    width: 80%;
 `
 const NoButton = styled.button`
     background-color: rgba(50, 20, 184, 0.411);
@@ -124,7 +126,7 @@ const NoButton = styled.button`
     padding: 10px;
     border: 0px solid rgba(50, 20, 184, 0.411);
     margin: 5px;
-    width: 50vw;
+    width: 80%;
 `
 
 export default Quiz;
