@@ -15,7 +15,7 @@ const Quiz = (props) => {
     const num = answer.length;
 
     const onClick_O = () => {
-        {quiz.map((l,idx)=>{
+        quiz.map((l,idx)=>{
             if (num === idx) {
                 if (l.answer === text_O.current.innerHTML) {
                     dispatch(addAnswer(true));
@@ -23,11 +23,11 @@ const Quiz = (props) => {
                     dispatch(addAnswer(false));
                 }
             }
-        })}
+        })
     }
     
     const onClick_X = () =>{
-        {quiz.map((l, idx) => {
+        quiz.map((l, idx) => {
         if (num === idx) {
             if (l.answer === text_X.current.innerHTML) {
             dispatch(addAnswer(true))
@@ -35,8 +35,8 @@ const Quiz = (props) => {
             dispatch(addAnswer(false))
             }
         }
-        })}
-  }
+        })        
+}
 
 
     const text_O = React.useRef();
@@ -57,7 +57,10 @@ const Quiz = (props) => {
                 {quiz.map((l, idx) => {
                     if (num === idx) {
                         return (
-                            <h2 key={idx}>{l.question}</h2>
+                            <div>
+                                <h3 key={idx}>{l.question}</h3>
+                                <Img src={l.quiz_img} />
+                            </div>
                         )
                     }
                 })}
@@ -65,9 +68,7 @@ const Quiz = (props) => {
                 {quiz.map((l, idx) => {
                     if (idx === num) {
                         return (
-                            <div key={idx}>
-                                <Img src="https://file.mk.co.kr/meet/neds/2021/04/image_readtop_2021_374021_16187973224615548.jpg" />
-                                
+                            <div key={idx}>                                
                                     <YesButton ref={text_O} onClick={onClick_O} >O</YesButton>
                                     <NoButton ref={text_X} onClick={onClick_X}>X</NoButton>
 
@@ -105,8 +106,9 @@ const Container = styled.div`
 
 const Img = styled.img`
     max-width: max-content;
-    min-height: 50vh;
-    width: 90%;
+    min-height: 100%;
+    width: 80%;
+
     margin: 16px
     
 `

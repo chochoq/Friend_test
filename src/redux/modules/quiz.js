@@ -1,5 +1,4 @@
 // quiz.js
-// import { firestore } from '../../firebase';
 
 // 퀴즈리스트가져오기, 답추가, 응답초기화
 const GET_QUIZ = "quiz/GET_QUIZ";
@@ -7,27 +6,25 @@ const ADD_ANSWER = "quiz/ADD_ANSWER";
 const RESET_ANSWER = "quiz/RESET_ANSWER";
 
 const initialState = {
-    name: ["잊누너"],
-    score: ["100", "80","60"],
+    name: ["재활용"],
+    score: ["100", "60","30"],
     score_texts: {
-        60: "주노 좋아하는구나!? 나도 조아해",
-        80: "80점!! 핫티구낫!!",
-        100: "찐러버 주노집으로 가자"
+        30: "우리 더 노력해서 분리배출 해봐요😉",
+        60: "우와 조금 더 하면 분리배출왕이 되겟는걸요?😘",
+        100: "재활용에 아주아주 신경쓰는 당신! 지구의 히어로😍"
     },
-    // page: "start",
     answers: [],
     quiz: [
-        { question: "주노는 잊누너", answer: "O" },
-        { question: "주노는 개그맨", answer: "O" },
-        { question: "주노는 잘생김", answer: "O" },
-        { question: "주노는 고양이를 키운다", answer: "O" },
-        { question: "주노는 술을 잘마신", answer: "O" },
-        { question: "주노는 귀여워", answer: "O" },
-        { question: "주노는 귀여워", answer: "O" },
-        { question: "주노는 귀여워", answer: "O" },
-        { question: "주노는 귀여워", answer: "O" },
-        { question: "주노는 귀여워", answer: "O" },
-
+        { question: "종이팩(테트라팩)은 물로 헹구고 부피를 최대한 줄여 재활용한다", answer: "O", quiz_img:'https://image.flaticon.com/icons/png/512/751/751682.png' },
+        { question: "캔은 깨끗하게 세척해 재활용으로 배출한다", answer: "O", quiz_img:'https://image.flaticon.com/icons/png/512/2916/2916038.png'},
+        { question: "원두 찌꺼기와 찻잎, 티백은 일반쓰레기로 버린다", answer: "O",quiz_img:'https://image.flaticon.com/icons/png/512/2935/2935441.png' },
+        { question: "양파 껍질은 일반쓰레기로 버린다", answer: "O", quiz_img:'https://image.flaticon.com/icons/png/512/1728/1728728.png' },
+        { question: "종이컵은 물로 헹구고 압착해 재활용한다", answer: "O", quiz_img:'https://image.flaticon.com/icons/png/512/4220/4220500.png'},
+        { question: "뽁뽁이는 테이프나 본드를 제거한 후 비닐류로 배출한다", answer: "O", quiz_img:'https://image.flaticon.com/icons/png/512/5024/5024486.png'},
+        { question: "실리콘 젤리폰케이스는 플라스틱으로 재활용한다 ", answer: "X", quiz_img:'https://image.flaticon.com/icons/png/512/644/644521.png' },
+        { question: "택배 상자를 버릴때는 송장스티커, 테이프는 뜯어서 일반쓰레기로 버린다", answer: "O", quiz_img:'https://image.flaticon.com/icons/png/512/2250/2250292.png' },
+        { question: "컵라면 용기는 씻어서 재활용으로 버린다", answer: "O", quiz_img:'https://image.flaticon.com/icons/png/512/5100/5100840.png' },
+        { question: "플라스틱빨대는 일반 쓰레기로 버린다", answer: "O", quiz_img:'https://image.flaticon.com/icons/png/512/3648/3648923.png' },
     ],
 };
 

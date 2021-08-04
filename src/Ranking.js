@@ -47,6 +47,7 @@ const Ranking = (props) => {
 
             <BoxWrap>
                 {ranking.map((r, idx) => {
+                    console.log(r)
                     if (r.current) {
                         return (
                             <BoxItem key={idx} highlight={true} ref={user_rank}>
@@ -69,6 +70,7 @@ const Ranking = (props) => {
                             </RankUser>
                         </BoxItem>
                     );
+                    
                 })}
 
                 

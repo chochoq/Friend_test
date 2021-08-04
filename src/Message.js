@@ -21,7 +21,7 @@ const Message = (props) => {
 
     return (
         <div>
-            <img src="https://file.mk.co.kr/meet/neds/2021/04/image_readtop_2021_374021_16187973224615548.jpg" alt='junhoImg' style={{ width: "80%", margin: "16px" }} />
+            <img src="https://image.flaticon.com/icons/png/512/4244/4244638.png" alt='trashImg' style={{ width: "80%", margin: "16px" }} />
             <h1 style={{
                 fontSize: '1.5em',
                 margin: "0px",
@@ -32,7 +32,13 @@ const Message = (props) => {
                     background: '#fef5d4',
                     padding: "5px 10px",
                     borderRadius: '30px'
-                    }}>{name}</span> 에게 한마디
+                    }}>{name}</span>을 더 열심히 하겟다는
+                <span
+                    style={{
+                    background: '#fef5d4',
+                    padding: "5px 10px",
+                    borderRadius: '30px'
+                    }}>{user_name}의</span> 마음을 알려주세요!
             </h1>
             
             <input ref={input_text} type="text" placeholder="내가 하고싶은 말은?"
@@ -63,7 +69,7 @@ const Message = (props) => {
                     borderRadius: '30px',
                     border: '#dadafc'
                 }}>
-                {name}에게 한마디하고 랭킹보러 갑시다</button>
+                {name}님 같이 노력하는 사람들을 보러가요!</button>
         </div>
     )
 }

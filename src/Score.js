@@ -32,10 +32,10 @@ const Score = (props) => {
 
     return (
             <Container>
-                <Text><span>{name}</span> 퀴즈에 대한 내 점수는?</Text>
+                <Text><span>{name}에</span> 나는 얼만큼 알까?</Text>
             <ScoreDiv>
-                <span>{score}</span> 점
-                <p>{score_text}</p>
+                <span>{score}점</span>
+                <Text><p>{score_text}</p></Text>
             </ScoreDiv>
 
 
@@ -68,6 +68,10 @@ const Text = styled.h1`
         background-color: rgba(171, 20, 10, 0.2);
         border-radius: 10px;
         padding: 5px 10px;
+    }
+    & p{
+        font-size: 0.5em;
+        padding-top: 10px;
     }
 `;
 

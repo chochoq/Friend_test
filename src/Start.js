@@ -11,7 +11,7 @@ const Start = ( props ) => {
 
     return (
         <div>
-            <img src="https://file.mk.co.kr/meet/neds/2021/04/image_readtop_2021_374021_16187973224615548.jpg" alt='junhoImg' style={{ width: "80%", margin: "16px" }} />
+            <img src="https://image.flaticon.com/icons/png/512/3081/3081597.png" alt='재활용이미지' style={{ width: "80%", margin: "16px" }} />
             
             <h1 style={{
                 fontSize: '1.5em',
@@ -23,7 +23,7 @@ const Start = ( props ) => {
                         background: '#fef5d4',
                         padding: "5px 10px",
                         borderRadius: '30px'
-                    }}>{name}</span> 에 대해 얼마나 알고있을까?
+                    }}>{name}을</span> 얼마나 열심히 할까?
             </h1>
             
             <input ref={input_text} type="text" placeholder="이름을 적어주세요"

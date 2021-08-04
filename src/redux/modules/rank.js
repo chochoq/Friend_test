@@ -11,13 +11,13 @@ const GET_RANK = 'rank/GET_RANK';
 const IS_LOADED = 'rank/IS_LOADED';
 
 const initialState = {
-    user_name: '',
-    user_message: '',
+    user_name: '이름',
+    user_message: '메세지',
     user_score: '',
     score_texts: {
-        60: "주노 좋아하는구나!? 나도 조아해",
-        80: "80점!! 핫티구낫!!",
-        100: "찐러버 주노집으로 가자"
+        30: "우리 더 노력해서 분리배출 해봐요😉",
+        60: "우와 조금 더 하면 분리배출왕이 되겟는걸요?😘",
+        100: "재활용에 아주아주 신경쓰는 당신! 지구의 히어로😍"
     },
     ranking: [],
     is_loaded: false,
@@ -48,7 +48,6 @@ export const getRankFB = () => {
             let rank_data = [];
 
             docs.forEach((doc) => {
-                // console.log(doc.data());
                     rank_data = [...rank_data, { id: doc.id, ...doc.data() }];
             });
 
@@ -76,14 +75,12 @@ export default function reducer(state = initialState, action = {}) {
             const rank_ids = state.ranking.map((r, idx) => {
                 return r.id;
             });
-            console.log(rank_ids);
 
             const rank_data_fb = action.rank_list.filter((r, idx) => {
                 if (rank_ids.indexOf(r.id) === -1) {
                     ranking_data = [...ranking_data, r];
                 }
             });
-            console.log(ranking_data);
             
             return { ...state, ranking: ranking_data };
         }
