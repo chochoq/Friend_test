@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# (React)재활용퀴즈
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+URL: https://url.kr/wkmij7
 
-## Available Scripts
+기술스택: AWS S3 Hosting, FireStore, React, material-UI, redux
 
-In the project directory, you can run:
 
-### `yarn start`
+![(React)%E1%84%8C%E1%85%A2%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%8F%E1%85%B1%E1%84%8C%E1%85%B3%20cc59a38504494f919071242c24a665c7/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-08-04_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.52.32.png](https://persistent-fruit-85b.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F78aa50b4-0d04-421a-a14d-ec02a5fe322e%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-08-04_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.52.32.png?table=block&id=cc59a385-0449-4f91-9071-242c24a665c7&spaceId=a07b9679-e55c-4b34-ad51-a4e7fac6c83a&width=480&userId=&cache=v2)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# 링크
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[Test web](https://url.kr/wkmij7)
 
-### `yarn test`
+[Notion page](https://persistent-fruit-85b.notion.site/React-3d70f92f1f5842f091e57966fad4a3c9)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 깃허브
 
-### `yarn build`
+[GitHub - chochoq/Friend_test: (React)](https://github.com/chochoq/Friend_test)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# **서비스설명**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+퀴즈 페이지로 문제를 맞추고 랭킹을 내 다른사람들과 비교할수있습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![스크린샷 2021-08-26 오전 3.41.16.png](https://persistent-fruit-85b.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffb0d7e1d-414a-4442-ac15-295650f04429%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-08-26_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_3.41.16.png?table=block&id=b7cc9680-0ce1-4057-896a-85772baf20ec&spaceId=a07b9679-e55c-4b34-ad51-a4e7fac6c83a&width=2090&userId=&cache=v2)
 
-### `yarn eject`
+![스크린샷 2021-08-26 오전 3.41.32.png](https://persistent-fruit-85b.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5c4a980e-2fcb-499d-9fb7-efa2dd28c914%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2021-08-26_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_3.41.32.png?table=block&id=8530f4de-ce0d-4d98-8892-d53c972daac5&spaceId=a07b9679-e55c-4b34-ad51-a4e7fac6c83a&width=1760&userId=&cache=v2)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# 🛠기술스택🛠
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React
+- react-router-dom
+- react-redux
+- redux-thunk
+- styled-components
+- firebase
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# 기술 구현 사항
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- 메인 페이지
+- 상세 페이지
+- 카테고리페이지
 
-## Learn More
+## 새롭게 배운 것
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+aws s3를 이용해 호스팅
